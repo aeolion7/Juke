@@ -1,7 +1,7 @@
 {
   "name": "juke",
   "version": "1.0.0",
-  "description": "",
+  "description": "## Setup",
   "main": "index.js",
   "scripts": {
     "start": "npm run start-server & npm run build-watch",
@@ -31,5 +31,16 @@
     "nodemon": "^1.14.11",
     "webpack": "^4.16.1",
     "webpack-cli": "^3.1.0"
-  }
+  },
+  "bin": {
+    "juke": "seed.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aeolion7/juke.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aeolion7/juke/issues"
+  },
+  "homepage": "https://github.com/aeolion7/juke#readme"
 }
