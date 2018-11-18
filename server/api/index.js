@@ -5,7 +5,7 @@ const { Album, Artist, Song } = require('../db');
 
 router.get('/albums', async (req, res, next) => {
   try {
-    const albums = await Album.findAll();
+    const albums = await Album.findAll({ include: Artist });
     res.send(albums);
   } catch (error) {
     console.error(error.message);
