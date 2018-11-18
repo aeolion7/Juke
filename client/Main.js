@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import { AlbumList, Sidebar, Player } from './';
+import SingleAlbum from './singleAlbum';
+import AlbumList from './albumList';
+import Player from './player';
+import Sidebar from './sidebar';
 import axios from 'axios';
 
 export default class Main extends Component {
@@ -23,7 +26,8 @@ export default class Main extends Component {
         <Sidebar />
         <div className="row container">
           {/* The music starts here! */}
-          <AlbumList albums={this.state.albums} />
+          {/* <AlbumList albums={this.state.albums} /> */}
+          <SingleAlbum />
         </div>
         <Player />
       </div>
