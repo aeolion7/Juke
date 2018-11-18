@@ -7,12 +7,12 @@ function AlbumList(props) {
       {props.albums.map(album => {
         return (
           <Album
-            key={album.id}
+            key={String(album.id)}
             id={album.id}
             name={album.name}
             artist={album.artist.name}
             artworkUrl={album.artworkUrl}
-            pickAlbum={props.pickAlbum}
+            pickAlbum={props.pickAlbum(album.id)}
           />
         );
       })}

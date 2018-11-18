@@ -22,11 +22,12 @@ export default class Main extends Component {
     });
   }
 
-  async pickAlbum(albumId) {
-    const album = await axios.get(`/api/albums/${albumId}`);
-    this.setState({
-      selectedAlbum: album,
-    });
+  pickAlbum(albumId) {
+    console.log(albumId);
+    axios
+      .get(`/api/albums/${albumId}`)
+      .then(res => res.data)
+      .then(album => this.setState({ selectedAlbum: album }));
   }
 
   render() {
