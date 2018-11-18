@@ -3,7 +3,7 @@ import React from 'react';
 function Album(props) {
   return (
     <div className="album">
-      <a>
+      <a onClick={props.pickAlbum}>
         <img src={props.artworkUrl} />
         <p>{props.name}</p>
         <small>{props.artist}</small>

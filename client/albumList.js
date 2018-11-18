@@ -12,7 +12,7 @@ function AlbumList(props) {
             name={album.name}
             artist={album.artist.name}
             artworkUrl={album.artworkUrl}
-            pickAlbum={props.pickAlbum(album.id)}
+            pickAlbum={props.pickAlbum}
           />
         );
       })}
