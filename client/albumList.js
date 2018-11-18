@@ -8,9 +8,11 @@ function AlbumList(props) {
         return (
           <Album
             key={album.id}
+            id={album.id}
             name={album.name}
             artist={album.artist.name}
             artworkUrl={album.artworkUrl}
+            pickAlbum={props.pickAlbum}
           />
         );
       })}

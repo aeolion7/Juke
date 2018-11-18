@@ -1,16 +1,16 @@
 import React from 'react';
+import Album from './album';
+import Song from './song';
 
-function SingleAlbum() {
+function SingleAlbum(props) {
   return (
     <div className="container">
       <div id="single-album" className="column">
-        <div className="album">
-          <a>
-            <img src="default-album.jpg" />
-            <p>ALBUM 2</p>
-            <small>Artist Name</small>
-          </a>
-        </div>
+        <Album
+          name={props.name}
+          artist={props.artist}
+          artworkUrl={props.artworkUrl}
+        />
         <table id="songs">
           <tbody>
             <tr className="gray">
@@ -20,33 +20,17 @@ function SingleAlbum() {
               <td>Artist</td>
               <td>Genre</td>
             </tr>
-            <tr>
-              <td>
-                <i className="fa fa-play-circle" />
-              </td>
-              <td>1</td>
-              <td>Song Name</td>
-              <td>Artist Name</td>
-              <td>Song Genre</td>
-            </tr>
-            <tr>
-              <td>
-                <i className="fa fa-play-circle" />
-              </td>
-              <td>2</td>
-              <td>Song Name</td>
-              <td>Artist Name</td>
-              <td>Song Genre</td>
-            </tr>
-            <tr>
-              <td>
-                <i className="fa fa-play-circle" />
-              </td>
-              <td>3</td>
-              <td>Song Name</td>
-              <td>Artist Name</td>
-              <td>Song Genre</td>
-            </tr>
+            {props.songs.map(song => {
+              return (
+                <Song
+                  key={song.id}
+                  id={song.id}
+                  name={song.name}
+                  artist={props.artist}
+                  genre={song.genre}
+                />
+              );
+            })}
           </tbody>
         </table>
       </div>
