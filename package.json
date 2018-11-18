@@ -1,7 +1,7 @@
 {
   "name": "juke",
   "version": "1.0.0",
-  "description": "## Setup",
+  "description": "Spotify clone project",
   "main": "index.js",
   "scripts": {
     "start": "npm run start-server & npm run build-watch",
