@@ -12,6 +12,7 @@ export default class Main extends Component {
       albums: [],
       selectedAlbum: {},
     };
+    this.deselectAlbum = this.deselectAlbum.bind(this);
     this.pickAlbum = this.pickAlbum.bind(this);
   }
 
@@ -19,6 +20,12 @@ export default class Main extends Component {
     const albumResponse = await axios.get('/api/albums');
     this.setState({
       albums: albumResponse.data,
+    });
+  }
+
+  deselectAlbum() {
+    this.setState({
+      selectedAlbum: {},
     });
   }
 
@@ -35,7 +42,7 @@ export default class Main extends Component {
   render() {
     return (
       <div id="main" className="row container">
-        <Sidebar />
+        <Sidebar deselectAlbum={this.deselectAlbum} />
         <div className="container">
           {this.state.selectedAlbum.id ? (
             <SingleAlbum
