@@ -24,10 +24,12 @@ export default class Main extends Component {
 
   pickAlbum(albumId) {
     console.log(albumId);
-    axios
-      .get(`/api/albums/${albumId}`)
-      .then(res => res.data)
-      .then(album => this.setState({ selectedAlbum: album }));
+    return async () => {
+      const { data } = await axios.get(`/api/albums/${albumId}`);
+      this.setState({
+        selectedAlbum: data,
+      });
+    };
   }
 
   render() {
