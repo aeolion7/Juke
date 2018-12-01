@@ -30,7 +30,6 @@ export default class Main extends Component {
   }
 
   pickAlbum(albumId) {
-    console.log(albumId);
     return async () => {
       const { data } = await axios.get(`/api/albums/${albumId}`);
       this.setState({
